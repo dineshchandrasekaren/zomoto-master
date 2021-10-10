@@ -6,8 +6,9 @@ import helmet from 'helmet';
 import cors from 'cors';
 import passport from 'passport';
 
+
 //API
-import Auth from './API/Auth';
+import { Auth, Food, Menu, Image, Order, Restraurant, Reviews, Payment,User } from './API/allAPI';
 
 //config
 import googleConfig from './config/google.config';
@@ -31,6 +32,15 @@ googleConfig(passport);
 
 //Microservices
 zomoto.use('/auth', Auth);
+zomoto.use('/food', Food);
+zomoto.use('/order', Order);
+zomoto.use('/menu', Menu);
+zomoto.use('/image', Image);
+zomoto.use('/restaurant', Restraurant);
+zomoto.use('/reviews', Reviews);
+zomoto.use('/payment', Payment);
+zomoto.use('/user', User);
+
 
 
 zomoto.listen(4000, () =>

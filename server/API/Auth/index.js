@@ -1,26 +1,34 @@
-import express from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import express from "express";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import passport from "passport";
 
 const Router = express.Router();
 
-import { UserModel } from '../../database/allModels';
-import passport from 'passport';
+//Models
+import { UserModel } from "../../database/user";
 
-/* ROUTE          /signup
-   ACCESS         PUBLIC
-   PARAMS         NONE
-   description    to signup user
-   method         GET              */
+//Validation
+import { validateSignup, validateSignin } from "../../validation/auth";
+
+/*
+Route         /signup
+Descrip       Signup with email and password
+Params        None
+Access        Public
+Method        POST
+*/
 
 Router.post("/signup", async (req, res) => {
    try {
+      await validateSignup(req.body.credentials);
 
-      await UserModel.findByPhoneAndEmail(req.body.credentials)
-
+      await UserModel.findEmailAndPhone(req.body.credentials);
+      //DB
       const newUser = await UserModel.create(req.body.credentials);
-      const token = newUser.generateJwtToken();
 
+      //JWT Auth Token
+      const token = newUser.generateJwtToken();
 
       return res.status(200).json({ token });
 
@@ -28,25 +36,35 @@ Router.post("/signup", async (req, res) => {
       return res.status(500).json({ error: error.message });
    }
 });
-/* ROUTE          /signin
-   ACCESS         PUBLIC
-   PARAMS         NONE
-   description    to signin user
-   method         GET              */
+
+
+/*
+Route         /signin
+Descrip       Signin with email and password
+Params        None
+Access        Public
+Method        POST
+*/
 
 Router.post("/signin", async (req, res) => {
    try {
-      const user = await UserModel.findByEmailAndPassword(req.body.credentials);
+      await validateSignin(req.body.credentials);
 
+      const user = await UserModel.findByEmailAndPassword(
+         req.body.credentials
+      );
+
+      //JWT Auth Token
       const token = user.generateJwtToken();
 
-
-      return res.status(200).json({ token });
+      return res.status(200).json({ token, status: "Success" });
 
    } catch (error) {
       return res.status(500).json({ error: error.message });
    }
 });
+
+
 /*
 Route         /google
 Descrip       Google Signin
@@ -60,8 +78,7 @@ Router.get("/google", passport.authenticate("google", {
       "https://www.googleapis.com/auth/userinfo.profile",
       "https://www.googleapis.com/auth/userinfo.email"
    ],
-}
-)
+})
 );
 
 /*
@@ -80,4 +97,11 @@ Router.get("/google/callback", passport.authenticate("google", { failureRedirect
 
 
 
+
 export default Router;
+
+//Aradhana
+//encrypted - 45t1ywh895%%bjhg%%y8719880 -> yhajkgggggggggggguy782178319 ->
+
+//UserModel.ourStatic()
+//checkUserByEmail.ourMethods()
