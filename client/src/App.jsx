@@ -1,11 +1,15 @@
+//HOC
+import HomeLayoutHOC from "./HOC/Home.HOC";
 
+//Component
+import Temp from "./Components/temp";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-4xl">dinesh</h1>
-    </div>
-  );
+    <>
+      <HomeLayoutHOC path="/" exact component={Temp} />
+    </>
+  )
 }
 
 export default App;
