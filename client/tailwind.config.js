@@ -1,8 +1,11 @@
 // tailwind.config.js
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}','./public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    maxWidth: {
+      '90': 'calc(80%)',
+    },
     extend: {
     colors: {
       zomato: {
@@ -16,11 +19,9 @@ module.exports = {
         700: '#700d16',
         800: '#46060c',
         900: '#1e0002',
-       
-      }
+      },
     },
     },
-    
   },
   variants: {
     extend: {},

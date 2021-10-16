@@ -5,3 +5,33 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+
+.slick-prev,
+.slick-next {
+  font-size: 2.7rem !important;
+  color: #fff !important;
+  z-index: 19 !important;
+  top: 37% !important;
+}
+
+.slick-prev {
+  left: -0.8% !important;
+}
+.slick-next {
+  right: 0.4% !important;
+}
+
+.slick-prev > svg,
+.slick-next > svg {
+  filter: drop-shadow(3px 5px 4px rgba(0, 0, 0, 0.5));
+}
+.slick-prev > svg:hover,
+.slick-next > svg:hover {
+  filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 1));
+  @apply rounded-full p-0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "" !important;
+}

@@ -54,7 +54,7 @@ const CategoryTab = () => {
         return <>
             {allType.map(({ id, name, icon }) => (
                 <Link to={`/${id}`}>
-                    <div className={`flex flex-col relative transition duration-700 ease-in-out items-center text-xl w-full flex-1 gap-1 py-2.5 md:py-3 hover:text-gray-700 cursor-pointer ${type === id && 'text-zomato-400 pt-3.5 md:pt-4 hover:text-zomato-400 '}`}>
+                    <div className={`flex  flex-col relative transition duration-700 ease-in-out items-center text-xl w-full flex-1 gap-1 py-2.5 md:py-3 hover:text-gray-700 cursor-pointer ${type === id && 'text-zomato-400 pt-3.5 md:pt-4 hover:text-zomato-400 '}`}>
                         <div className={type === id && 'border-t-2 absolute h-4 top-0 z-10  w-full border-zomato-400'} />
                         {icon}
                         <span className='text-sm'>{name}</span>
@@ -84,10 +84,10 @@ const CategoryTab = () => {
     };
 
     return (
-        <nav className="w-full ">
+        <nav className="w-full lg:mx-auto lg:max-w-90  ">
             <div style={{ boxShadow: '-1px -2px 4px rgba(0,0,0,0.09)' }}
-                className="w-full shadow px-4 fixed bottom-0 border text-gray-500 border-gray-300 flex  justify-between md:justify-evenly lg:hidden">
-                <Tabmd />
+                className="w-full z-10 bg-white shadow px-4  fixed bottom-0 border text-gray-500 border-gray-300 flex  justify-between md:justify-evenly lg:hidden">
+                <Tabmd  />
             </div>
             <div className="hidden lg:mt-10 lg:flex">
                 <Tablg />

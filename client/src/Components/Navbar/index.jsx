@@ -28,14 +28,15 @@ const Navmd = () => {
     const onchange = () =>  open((preV) => !preV);
 
     return (<>
-        <div style={{ paddingTop: "16%", paddingLeft: "8%" }} className={`bg-white  flex text-lg   font-light absolute flex-col gap-10 absolute z-10 w-full h-full top-0 transition-all duration-300 ${close ? "-left-full" : "left-0"}`}>
+        <div style={{ paddingTop: "16%", paddingLeft: "8%" }}
+            className={`bg-white  flex text-lg   font-light absolute flex-col gap-10 absolute z-20 w-full h-full top-0 transition-all duration-300 ${close ? "-left-full" : "left-0"}`}>
             <span>Log in</span>
             <span>Sign up</span>
         </div>
         <div className='px-6 py-5 flex items-center w-full justify-between'>
-            <span className='text-2xl z-20' onClick={onchange}>{close ? <GiHamburgerMenu /> : <MdOutlineClose />} </span>
+            <span className='text-2xl z-30' onClick={onchange}>{close ? <GiHamburgerMenu /> : <MdOutlineClose />} </span>
             {/* slideBar */}
-            <div className='w-32 z-20'>
+            <div className='w-32 z-30'>
                 <img className='w-full h-full' src={logo} alt="logo" />
             </div>
         </div>
@@ -44,7 +45,7 @@ const Navmd = () => {
 };
 
 const Navlg = () => (
-    <div className='flex items-center justify-between m-auto text-gray-600 w-full p-3'>
+    <div className='flex items-center justify-between lg:mx-auto lg:max-w-90 m-auto text-gray-600 w-full p-3'>
         <div className="w-5/6 flex gap-5 items-center">
             <div className='w-32 h-7 '>
                 <img className='w-full h-full' src={logo} alt="logo" />

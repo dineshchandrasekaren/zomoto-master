@@ -1,8 +1,12 @@
 import React from 'react';
 import { useParams} from 'react-router-dom';
+import Delivery from '../Delivery';
 function Master() {
+    const { type } = useParams();
     return (
-        <>{useParams().type}</>
+        <>
+         {type==='delivery' && <Delivery/>}   
+        </>
     )
 };
 

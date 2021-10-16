@@ -5,7 +5,7 @@ import CategoryTab from "../Components/CategoryTab";
 
 
 const HomeLayout = (props) => {
-  return <div className='lg:w-10/12 lg:mx-auto'>
+  return <div >
     <Navbar />
     <CategoryTab/>
     {props.children}
