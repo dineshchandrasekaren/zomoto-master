@@ -24,7 +24,7 @@ const Carousel = (props) => {
                 className={className}
                 onClick={onClick}
             >
-                <IoIosArrowDroprightCircle className='stroke-current  rounded-full shadow-xl' />
+                <IoIosArrowDroprightCircle  />
             </div>
         )
     };
