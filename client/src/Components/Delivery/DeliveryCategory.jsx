@@ -2,7 +2,7 @@ import React from 'react'
 
 function DeliveryCategory(props) {
     const DeliverySm = (props) => (
-        <div style={{ width: '32%' }} className='bg-white lg:hidden cursor-pointer text-center border rounded-xl shadow-md '  >
+        <div style={{ width: '30%' }} className='bg-white lg:hidden cursor-pointer text-center border rounded-xl shadow-md '  >
 
             <div className="w-full h-24">
                 <img className='object-cover w-full h-full rounded-t-xl' src={props.image} alt={props.title} />

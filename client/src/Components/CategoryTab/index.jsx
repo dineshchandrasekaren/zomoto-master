@@ -87,6 +87,7 @@ const CategoryTab = () => {
         <nav className="w-full lg:mx-auto lg:max-w-90  ">
             <div style={{ boxShadow: '-1px -2px 4px rgba(0,0,0,0.09)' }}
                 className="w-full z-10 bg-white shadow px-4  fixed bottom-0 border text-gray-500 border-gray-300 flex  justify-between md:justify-evenly lg:hidden">
+                
                 <Tabmd  />
             </div>
             <div className="hidden lg:mt-10 lg:flex">

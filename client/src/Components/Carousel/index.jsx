@@ -31,17 +31,20 @@ const Carousel = (props) => {
 
 
     let settings = {
-        arrows: true,
-        speed: 800,
+        arrows: props.isArrow,
+        speed: props.speed,
         slidesToShow: props.show,
         slidesToScroll: props.scroll,
         initialSlide: 0,
         useCSS: true,
-        infinite: false,
+        infinite: props.infinite,
         useTransform: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        responsive: [
+        autoplay:props.isAutoPlay,
+        autoplaySpeed:2000,
+        pauseOnHover:props.pause,
+        responsive: props.scalable && [
             {
                 breakpoint: 1024,
                 settings: {
@@ -63,7 +66,7 @@ const Carousel = (props) => {
                     slidesToScroll: 1
                 }
             }
-        ]
+        ],
     };
 
     return (
