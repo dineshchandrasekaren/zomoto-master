@@ -12,6 +12,7 @@ import { Auth, Food, Menu, Image, Order, Restraurant, Reviews, Payment,User } fr
 
 //config
 import googleConfig from './config/google.config';
+import routeConfig from "./config/route.config";
 
 //Database connection
 import connectDB from './database/connectDB';
@@ -29,6 +30,7 @@ zomoto.use(passport.session());
 
 //google Auth Configuration
 googleConfig(passport);
+routeConfig(passport);
 
 //Microservices
 zomoto.use('/auth', Auth);
