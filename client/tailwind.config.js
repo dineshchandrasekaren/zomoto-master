@@ -4,7 +4,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     maxWidth: {
-      '90': 'calc(80%)',
+      '90': 'calc(85%)',
     },
     extend: {
     colors: {

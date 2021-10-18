@@ -5,6 +5,12 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+.customshadow:hover{
+ box-shadow: rgba(0, 0, 0 ,0.3) 2px 2px 15px;
+}
+.xss{
+  font-size: .7rem;
+}
 
 .slick-prev,
 .slick-next {

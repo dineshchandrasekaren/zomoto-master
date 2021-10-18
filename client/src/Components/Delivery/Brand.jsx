@@ -33,8 +33,8 @@ const Brand = () => {
     }]
 
   return(<>
-          <h1 className='md:text-2xl text-xl text-gray-800 lg:text-3xl  font-medium lg:py-4 py-2'>Top brands for you</h1>
-          <Carousel show={6} scroll={1} infinite={false} speed={800} isArrow={true} scalable={true} >
+          <h1 className='md:text-2xl text-xl text-gray-800 lg:text-3xl  font-medium  py-2'>Top brands for you</h1>
+          <Carousel show={6} scroll={1} isInfinite={false} speed={800} isInitial={0} isArrow={true} scalable={true} >
               {BrandData.map(({image,time})=>
               <div className='flex flex-col max-w-48 px-4   items-center justify-center overflow-hidden rounded-2xl  '>
                   <div className='w-full  shadow-xl lg:max-w-40 h-40  rounded-2xl'>
