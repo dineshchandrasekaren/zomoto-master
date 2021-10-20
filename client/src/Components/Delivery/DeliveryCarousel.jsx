@@ -51,7 +51,7 @@ const DeliveryCarousel = () => {
                     {categories.map(({ image, title }) => <DeliveryCategory image={image} title={title} />)}
                 </div>
                 {/* large device */}
-                <div className='hidden w-full  flex lg:block'>
+                <div className='hidden w-full transition duration-700  flex lg:block'>
                     <Carousel show={4} scroll={1} speed={800} isArrow={true} scalable={false} isInitial={0} isInfinite={false}>
                         {categories.map(({ image, title }) => <DeliveryCategory image={image} title={title} />)}
                     </Carousel>

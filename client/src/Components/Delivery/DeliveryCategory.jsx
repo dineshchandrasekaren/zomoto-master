@@ -14,23 +14,23 @@ function DeliveryCategory(props) {
         </div>
     );
     const DeliveryLg = (props) => (
-        <div className='hidden max-w-5xl lg:block mx-2 ml-4 cursor-pointer text-gray-700'>
+        <div className='hidden max-w-5xl lg:block mx-2 ml-4 transition duration-700 cursor-pointer text-gray-700'>
 
-            <div className="w-full h-48">
-                    <img
+            <div className="w-full rounded-xl shadow-md h-48">
+                <img
                     src={props.image}
                     className='rounded-xl object-cover w-full h-full ' alt={props.title} />
             </div>
 
-            
-            <h3 className="text-xl font-medium py-2 w-full">{ props.title}</h3>
+
+            <h3 className="text-xl font-medium py-2 w-full">{props.title}</h3>
         </div>
     );
     return (
-       
-        <>  
+
+        <>
             <DeliverySm {...props} />
-            <DeliveryLg {...props}/>
+            <DeliveryLg {...props} />
         </>
     )
 }

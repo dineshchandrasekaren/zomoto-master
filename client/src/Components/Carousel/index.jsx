@@ -12,7 +12,7 @@ const Carousel = (props) => {
                 className={className}
                 onClick={onClick}
             >
-                <IoIosArrowDropleftCircle    />
+                <IoIosArrowDropleftCircle />
             </div>
         )
     };
@@ -24,11 +24,13 @@ const Carousel = (props) => {
                 className={className}
                 onClick={onClick}
             >
-                <IoIosArrowDroprightCircle  />
+                <IoIosArrowDroprightCircle />
             </div>
         )
     };
 
+    // isArrow, speed, show, scroll, isInitial, 
+    // isInfinite, isAutoPlay, pause, scalable
 
     let settings = {
         arrows: props.isArrow,
@@ -41,28 +43,28 @@ const Carousel = (props) => {
         useTransform: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        autoplay:props.isAutoPlay,
-        autoplaySpeed:2000,
-        pauseOnHover:props.pause,
+        autoplay: props.isAutoPlay,
+        autoplaySpeed: 2000,
+        pauseOnHover: props.pause,
         responsive: props.scalable && [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: props.lgShow ?props.lgShow:4,
                     slidesToScroll: 1,
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow:props.mdShow ? props.mdShow:4,
                     slidesToScroll: 1,
                 }
             },
             {
                 breakpoint: 640,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow:props.smShow ? props.smShow : 3,
                     slidesToScroll: 1
                 }
             }
