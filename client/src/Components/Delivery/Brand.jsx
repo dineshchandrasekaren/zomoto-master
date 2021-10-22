@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from "../Carousel";
+import { Title } from '../Typography/Typography';
 
 const Brand = () => {
 
@@ -33,8 +34,8 @@ const Brand = () => {
     }]
 
     const BrandImage = ({ image, time }) => (
-        <div className='flex flex-col max-w-48 px-4 cursor-pointer   items-center justify-center overflow-hidden rounded-xl  '>
-            <div className='w-full  shadow-lg lg:max-w-40 h-40  rounded-2xl'>
+        <div className='flex flex-col max-w-48 px-4 cursor-pointer items-center justify-center overflow-hidden rounded-xl'>
+            <div className='w-full shadow-lg lg:max-w-40 h-40 mb-2 rounded-2xl'>
                 <img className='w-full h-full shadow-md object-cover rounded-2xl    '
                     src={image}
                     alt='brand logo' />
@@ -49,7 +50,7 @@ const Brand = () => {
     );
 
     return (<>
-        <h1 className='md:text-2xl  text-xl text-gray-800 lg:text-3xl  font-medium  py-2'>Top brands for you</h1>
+        <Title text='Top brands for you' />
         <Carousel show={6} smShow={3} mdShow={4} scroll={1} isInfinite={false} speed={800} isInitial={0} isArrow={true} scalable={true} >
             {BrandData.map((data) =>
                 <BrandImage {...data} />

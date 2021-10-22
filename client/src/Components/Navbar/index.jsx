@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaUserAlt } from 'react-icons/fa';
 import { MdOutlineClose, MdArrowDropDown, MdArrowDropUp } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';

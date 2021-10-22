@@ -1,6 +1,7 @@
 import React from 'react';
 import DeliveryCategory from './DeliveryCategory';
 import Carousel from '../Carousel';
+import { Title } from '../Typography/Typography';
 
 
 const DeliveryCarousel = () => {
@@ -45,7 +46,7 @@ const DeliveryCarousel = () => {
     return (
         <>
             <div className='w-11/12 lg:w-full mx-auto my-10'>
-                <h2 className='md:text-2xl text-xl text-gray-800 lg:text-3xl  font-medium lg:py-4 py-2'>Inspiration for your first order</h2>
+                <Title text='Inspiration for your first order'/>
                 {/* small device */}
                 <div className='gap-2 justify-evenly lg:hidden flex flex-wrap'>
                     {categories.map(({ image, title }) => <DeliveryCategory image={image} title={title} />)}

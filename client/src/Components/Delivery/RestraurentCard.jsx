@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { TiStarFullOutline } from 'react-icons/ti';
 import Carousel from "../Carousel";
 
@@ -7,7 +7,7 @@ function RestraurentCard({ name, isPro, photos, isOff, cuisine, averageCost, dur
     const image2 = 'https://b.zmtcdn.com/data/o2_assets/4bf016f32f05d26242cea342f30d47a31595763089.png?output-format=webp';
     return (
         <>
-            <div className='flex flex-col cursor-pointer transition duration-700 customshadow lg:w-1/3 md:w-1/2 w-full  mb-2 gap-1.5 p-2 rounded-2xl  hover:border-2 hover:border-blue-600 '>
+            <div className='flex flex-col cursor-pointer transition duration-700 customshadow lg:w-1/3 md:w-1/2 w-full c gap-1.5 p-2 rounded-2xl  hover:border-2 hover:border-blue-600 '>
 
                 <div className='relative  rounded-xl'>
                     <img className='w-full h-full rounded-2xl' src={photos && photos[0]} alt='Barbeque Hut' />

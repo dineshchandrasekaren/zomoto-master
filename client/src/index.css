@@ -5,17 +5,21 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
-.customshadow:hover{
- box-shadow: rgba(0, 0, 0 ,0.3) 2px 2px 15px;
+.customshadow:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 15px;
 }
-.xss{
-  font-size: .7rem;
+.xss {
+  font-size: 0.7rem;
+}
+
+.w-custom {
+  width: 29%;
 }
 
 .slick-prev,
 .slick-next {
   font-size: 2.7rem !important;
-  color: #fff !important;
+  color: #fff8f9 !important;
   z-index: 9 !important;
   top: 37% !important;
 }

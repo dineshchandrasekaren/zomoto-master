@@ -1,6 +1,6 @@
-import React from 'react'
-import Slider from 'react-slick'
-import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from 'react-icons/io';
+import React from 'react';
+import Slider from 'react-slick';
+import { IoChevronBackCircle, IoChevronForwardCircle} from 'react-icons/io5';
 
 
 const Carousel = (props) => {
@@ -12,7 +12,7 @@ const Carousel = (props) => {
                 className={className}
                 onClick={onClick}
             >
-                <IoIosArrowDropleftCircle />
+                <IoChevronBackCircle />
             </div>
         )
     };
@@ -24,7 +24,7 @@ const Carousel = (props) => {
                 className={className}
                 onClick={onClick}
             >
-                <IoIosArrowDroprightCircle />
+                <IoChevronForwardCircle />
             </div>
         )
     };
@@ -39,6 +39,7 @@ const Carousel = (props) => {
         slidesToScroll: props.scroll,
         initialSlide: props.isInitial,
         useCSS: true,
+        dots:props.isDots,
         infinite: props.isInfinite,
         useTransform: true,
         nextArrow: <NextArrow />,
