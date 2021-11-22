@@ -1,7 +1,7 @@
 import React from 'react';
 import DeliveryCategory from './DeliveryCategory';
 import Carousel from '../Carousel';
-import { Title } from '../Typography/Typography';
+import { Title } from '../Reusable/Typography';
 
 
 const DeliveryCarousel = () => {

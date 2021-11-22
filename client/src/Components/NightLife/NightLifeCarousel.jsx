@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from '../Carousel/index';
 import PictureCarouseCard from '../PictureCarouselCard';
-import { SubTitle, Title, SubLink } from '../Typography/Typography';
+import { SubTitle, Title, SubLink } from '../Reusable/Typography';
 
 function NightLifeCarousel() {
     const datas = [{
