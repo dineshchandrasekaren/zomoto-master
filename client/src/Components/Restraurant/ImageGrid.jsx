@@ -4,14 +4,14 @@ import { FiCamera } from "react-icons/fi";
 
 const ImageGrid = (props) => {
   return (
-    <>
+    <div className="md:px-2 lg:px-0">
       {/* flex */}
       <div className="w-full h-72 md:h-80 lg:h-96   mx-auto my-4  flex flex-nowrap gap-2 ">
         <Image
           isOpacity={true}
           alt="restraurent_image"
           src={props.src[0]}
-          whclass="w-11/12 md:w-4/6 h-full"
+          whclass="w-11/12 md:w-4/6 mx-auto h-full"
         />
 
         {/* grid */}
@@ -57,7 +57,7 @@ const ImageGrid = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

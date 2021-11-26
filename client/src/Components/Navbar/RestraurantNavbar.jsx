@@ -88,8 +88,12 @@ const Navlg = () => (
       </div>
     </div>
     <div className="flex text-lg gap-6 text-light ">
-      <span className="cursor-pointer hover:text-gray-500">Log in</span>
-      <span className="cursor-pointer hover:text-gray-500">Sign up</span>
+      <span className="cursor-pointer whitespace-nowrap hover:text-gray-500">
+        Log in
+      </span>
+      <span className="cursor-pointer whitespace-nowrap hover:text-gray-500">
+        Sign up
+      </span>
     </div>
   </div>
 );

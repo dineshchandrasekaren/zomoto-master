@@ -8,6 +8,15 @@
 .customshadow:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 15px;
 }
+.gradient-changer {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 229, 231, 1) 100%
+  );
+}
 .xss {
   font-size: 0.7rem;
 }
@@ -15,7 +24,12 @@
 .w-custom {
   width: 29%;
 }
-
+@media screen and (max-width: 410px) {
+  .bug-fix {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
 .slick-prev,
 .slick-next {
   font-size: 2.7rem !important;
@@ -46,3 +60,47 @@
 .slick-next:before {
   content: "" !important;
 }
+
+.leaflet-container {
+  width: inherit;
+  height: inherit;
+}
+
+/* toast
+.toast-container {
+  display: flex;
+  justify-content: center;
+}
+.message {
+  color: rgba(255, 255, 255, 0.89);
+  font-size: 1rem;
+}
+
+.toast {
+  background-color: #e23744;
+  width: 30ch;
+  padding: 1.5rem 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+  visibility: hidden;
+  position: absolute;
+  display: hidden;
+  top: 10px;
+  animation: mymove 4s linear;
+}
+@keyframes mymove {
+  25% {
+    top: 10px;
+    visibility: visible;
+    display: inline-block;
+    opacity: 100%;
+  }
+  75% {
+    opacity: 20%;
+  }
+
+  100% {
+    opacity: 0%;
+    display: hidden;
+  }
+} */
