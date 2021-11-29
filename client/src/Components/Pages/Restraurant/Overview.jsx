@@ -76,7 +76,15 @@ const Overview = () => {
             </Link>
           </div>
           <MenuCollections
-            src="https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?"
+          className="w-2/6 md:w-1/4 h-36 md:h-44   lg:h-48 "
+            images={[
+              "https://b.zmtcdn.com/data/pictures/5/65155/7398da37ab73c4c7cb16ac860e577369.jpg?",
+              "https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?",
+              "https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?",
+              "https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?",
+              "https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?",
+              "https://b.zmtcdn.com/data/menus/213/3000213/a5b1c6615a6160942b9411e4127ebcec.jpg?",
+            ]}
             menuTitle="Menu"
             pages="12"
           />
@@ -154,14 +162,14 @@ const Overview = () => {
             activeColor="#ffd700"
           />
         </div>
-         <div className="md:hidden">
-           <MapView
+        <div className="md:hidden">
+          <MapView
             title="North Little"
             phno="+914428294081"
             mapLocation={[13.0824700409, 80.2498279139]}
             address="35, Millers Road, Kilpauk, Chennai"
-                   />
-         </div>
+          />
+        </div>
         <div className="flex flex-col gap-4">
           <Review /> <Review /> <Review /> <Review /> <Review />
         </div>

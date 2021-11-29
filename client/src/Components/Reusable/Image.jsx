@@ -2,7 +2,7 @@ import React from "react";
 
 const Image = (props) => {
   return (
-    <div 
+    <div id={props.id}
       className={`${props.whclass} cursor-pointer rounded bg-black overflow-hidden  `}
     >
       <img

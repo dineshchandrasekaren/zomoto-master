@@ -6,30 +6,51 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HiLocationMarker } from "react-icons/hi";
 import { RiSearchLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import LogIn from "../Auth/LogIn";
+import SignUp from "../Auth/SignUp";
 
 const logo =
   "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png";
 
-const Navsm = () => (
-  <div className="flex items-center py-3 border px-4 w-full justify-between">
-    <Link to="/">
-      <BiArrowBack className="text-2xl" />
-    </Link>
-    <div className="w-28">
-      <img className="w-full h-full" src={logo} alt="logo" />
+const Navsm = ({ onClickLogIn, onClickSignUp }) => {
+  const [close, open] = useState(true);
+  return (
+    <div className="flex items-center py-3 border px-4 w-full justify-between">
+      <Link to="/">
+        <BiArrowBack className="text-2xl" />
+      </Link>
+      <div className="w-28">
+        <img className="w-full h-full" src={logo} alt="logo" />
+      </div>
+      <div className="flex items-center gap-3">
+        <button className="bg-zomato-400 hover:bg-zomato-300 py-2 px-3 text-white rounded-full">
+          Use App
+        </button>
+        <span
+          onClick={() => open((preV) => !preV)}
+          className="border rounded-full text-zomato-400 cursor-pointer hover:text-zomato-300 p-2 border-gray-400 text-base"
+        >
+          <FaUserAlt />
+          <div
+            style={{ width: "fit-content", height: "fit-content" }}
+            className={`flex flex-col ${
+              close ? "hidden" : "block"
+            } absolute text-black top-14 right-5 gap-2 p-3 rounded-md bg-white border border-gray-300 shadow-md `}
+          >
+            <span onClick={onClickLogIn} className="text-sm">
+              Log In
+            </span>
+            <span onClick={onClickSignUp} className="text-sm">
+              Sign Up
+            </span>
+          </div>
+        </span>
+      </div>
     </div>
-    <div className="flex items-center gap-3">
-      <button className="bg-zomato-400 hover:bg-zomato-300 py-2 px-3 text-white rounded-full">
-        Use App
-      </button>
-      <span className="border rounded-full text-zomato-400 cursor-pointer hover:text-zomato-300 p-2 border-gray-400 text-base">
-        <FaUserAlt />
-      </span>
-    </div>
-  </div>
-);
+  );
+};
 
-const Navmd = () => {
+const Navmd = ({ onClickLogIn, onClickSignUp }) => {
   const [close, open] = useState(true);
 
   const onchange = () => open((preV) => !preV);
@@ -42,8 +63,12 @@ const Navmd = () => {
           close ? "-left-full" : "left-0"
         }`}
       >
-        <span>Log in</span>
-        <span>Sign up</span>
+        <span className="z-50" onClick={onClickLogIn}>
+          Log In
+        </span>
+        <span className="z-50" onClick={onClickSignUp}>
+          Sign Up
+        </span>
       </div>
       <div className="px-6 py-5 flex items-center w-full justify-between">
         <span className="text-2xl z-30" onClick={onchange}>
@@ -58,7 +83,7 @@ const Navmd = () => {
   );
 };
 
-const Navlg = () => (
+const Navlg = ({ onClickLogIn, onClickSignUp }) => (
   <div className="flex items-center justify-between lg:mx-auto lg:max-w-90 m-auto text-gray-600 w-full p-3">
     <div className="w-5/6 flex gap-5 items-center">
       <div className="w-32 h-7 ">
@@ -88,26 +113,38 @@ const Navlg = () => (
       </div>
     </div>
     <div className="flex text-lg gap-6 text-light ">
-      <span className="cursor-pointer whitespace-nowrap hover:text-gray-500">
-        Log in
+      <span
+        onClick={onClickLogIn}
+        className="cursor-pointer whitespace-nowrap hover:text-gray-500"
+      >
+        Log In
       </span>
-      <span className="cursor-pointer whitespace-nowrap hover:text-gray-500">
-        Sign up
+      <span
+        onClick={onClickSignUp}
+        className="cursor-pointer whitespace-nowrap hover:text-gray-500"
+      >
+        Sign Up
       </span>
     </div>
   </div>
 );
 const RestraurantNavbar = () => {
+  const [openLogIn, setOpenLogIn] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false);
+  const onClickLogIn = () => setOpenLogIn((preV) => !preV);
+  const onClickSignUp = () => setOpenSignUp((preV) => !preV);
   return (
     <nav style={{ borderBottom: "1px solid #e6e6e6" }} className="w-full ">
+      <LogIn isOpen={openLogIn} setIsOpen={setOpenLogIn} />
+      <SignUp isOpen={openSignUp} setIsOpen={setOpenSignUp} />
       <div className=" md:hidden shadow ">
-        <Navsm />
+        <Navsm onClickLogIn={onClickLogIn} onClickSignUp={onClickSignUp} />
       </div>
       <div className="hidden lg:flex ">
-        <Navlg />
+        <Navlg onClickLogIn={onClickLogIn} onClickSignUp={onClickSignUp} />
       </div>
       <div className="hidden md:flex shadow border lg:hidden">
-        <Navmd />
+        <Navmd onClickLogIn={onClickLogIn} onClickSignUp={onClickSignUp} />
       </div>
     </nav>
   );
