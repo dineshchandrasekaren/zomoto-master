@@ -5,8 +5,12 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+
 .customshadow:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 15px;
+}
+.customshadow1 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -1px 4px;
 }
 .gradient-changer {
   background: rgb(255, 255, 255);
@@ -28,6 +32,12 @@
   .bug-fix {
     flex-wrap: wrap;
     gap: 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .center-custom {
+    right: 10%;
+    left: 10%;
   }
 }
 .slick-prev,

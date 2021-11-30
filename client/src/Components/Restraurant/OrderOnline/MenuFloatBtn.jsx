@@ -9,7 +9,7 @@ const MenuFloatBtn = (props) => {
 
   return (
     <>
-      <div className="fixed bottom-16 right-10  md:hidden ">
+      <div className="fixed bottom-28 right-10  md:hidden ">
         <div
           className={`bg-white overflow-y-scroll border-gray-300 rounded-xl border shadow-xl  h-80 ${
             close ? "hidden" : "block"
@@ -18,7 +18,7 @@ const MenuFloatBtn = (props) => {
           {props.children}
         </div>
         <span
-          className="text-lg fixed bottom-4 right-4 shadow-2xl flex items-center bg-yellow-900 px-3  rounded-full py-1.5 text-white gap-2"
+          className="text-lg fixed bottom-16 right-4 shadow-2xl flex items-center bg-yellow-900 px-3  rounded-full py-1.5 text-white gap-2"
           onClick={onchange}
         >
           {close ? <GiHamburgerMenu /> : <MdOutlineClose />} Menu

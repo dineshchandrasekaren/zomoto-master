@@ -1,4 +1,5 @@
 import React from "react";
+import CartContainer from "../Components/Cart/CartContainer";
 import RestraurantNavbar from "../Components/Navbar/RestraurantNavbar";
 import ImageGrid from "../Components/Restraurant/ImageGrid";
 import RestraurantInfo from "../Components/Restraurant/RestraurantInfo";
@@ -9,7 +10,7 @@ const RestraurantLayout = (props) => {
   return (
     <div>
       <RestraurantNavbar />
-      <div className="lg:mx-auto lg:max-w-90  mx-auto w-full lg:py-2">
+      <div className="lg:mx-auto lg:max-w-90    mx-auto w-full lg:py-2">
         <ImageGrid
           src={[
             "https://b.zmtcdn.com/data/pictures/7/72627/b0490fb43e9c6d26ea191e514dc55829.jpg?output-format=webp",
@@ -30,6 +31,7 @@ const RestraurantLayout = (props) => {
         <Tabs />
         {props.children}
       </div>
+        <CartContainer/>
     </div>
   );
 };

@@ -12,6 +12,8 @@ import Menus from "./Components/Pages/Restraurant/Menus";
 import Photos from "./Components/Pages/Restraurant/Photos";
 
 import { useParams } from "react-router-dom";
+import Checkout from "./Components/Pages/Checkout.page";
+import CheckoutLayoutHOC from "./HOC/Checkout.HOC";
 
 function App() {
   const { id } = useParams();
@@ -55,6 +57,7 @@ function App() {
         exact
         component={Photos}
       />
+      <CheckoutLayoutHOC path="/checkout/order" exact component={Checkout} />
     </>
   );
 }
