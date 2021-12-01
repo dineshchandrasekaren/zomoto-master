@@ -1,0 +1,22 @@
+import {GET_RESTAURANT } from "./restaurant.type";
+
+const INITIAL_STATE = {
+    restaurant:[]
+}
+const restaurant = (state = INITIAL_STATE, action) => {
+    
+    switch(action.type) {
+        case GET_RESTAURANT:
+            return {
+                ...state,
+                restaurant: action.payload
+            }
+
+        default:
+            return {
+                ...state
+            }
+    }
+}
+
+export default restaurant
